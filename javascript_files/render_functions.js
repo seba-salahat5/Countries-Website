@@ -16,19 +16,21 @@ export let renderCountries = function (countries, onStarClicked) {
     countryCard.setAttribute('id', `col-${country.cca2}`);
     countryCard.setAttribute('draggable', "true");
 
-    countryCard.innerHTML = `<div class="card h-100 white" id=card-${country.cca2}>
-        <img class="card-img-top" src=${country.flags.svg} alt=${country.name.common}>
-        <div class="card-body" id="${country.name.common}">
-          <h5 class="card-title text-start fw-bold">${country.name.common}</h5>
-          <h6><span class="fw-bold">Population: </span><span>${country.population}</sapn>
-          </h6>
-          <h6><span class="fw-bold">Region: </span><span>${country.region}</sapn>
-          </h6>
-          <h6><span class="fw-bold">Capital: </span><span>${country.capital}</sapn>
-          </h6>
+    countryCard.innerHTML = `<div class="card h-100 white">
+        <div id=card-${country.cca2}>
+          <img class="card-img-top" src=${country.flags.svg} alt=${country.name.common}>
+          <div class="card-body" id="${country.name.common}">
+            <h5 class="card-title text-start fw-bold">${country.name.common}</h5>
+            <h6><span class="fw-bold">Population: </span><span>${country.population}</sapn>
+            </h6>
+            <h6><span class="fw-bold">Region: </span><span>${country.region}</sapn>
+            </h6>
+            <h6><span class="fw-bold">Capital: </span><span>${country.capital}</sapn>
+            </h6>
+          </div>
         </div>
         <div class="d-lg-none d-flex flex-row-reverse py-2 px-2">
-        <i class="fa-regular fa-star" id="${country.cca2}-starIcon"></i>
+          <i class="fa-regular fa-star" id="${country.cca2}-starIcon"></i>
         </div>
       </div>`;
 
@@ -101,47 +103,21 @@ export let displayDetails = function (data, borders) {
         <h2 class="fw-bold" id="name">${data.name}</h2>
         <div class="row">
             <div class="my-4 col-12 col-sm-12 col-md-6 col-lg-6">
-                <dt>
-                    <h3 class="card-text fs-6 fw-semibold d-inline py-3">Native Name: </h3>
-                    <h3 class="card-text fs-6 fw-normal d-inline py-3" id="native">${data.nativeName}</h3>
-                </dt>
-                <dt>
-                    <h3 class="card-text fs-6 fw-semibold d-inline py-3">Population: </h3>
-                    <h3 class="card-text fs-6 fw-normal d-inline py-3" id="population">${data.population}</h3>
-                </dt>
-                <dt>
-                    <h3 class="card-text fs-6 fw-semibold d-inline py-3">Region: </h3>
-                    <h3 class="card-text fs-6 fw-normal d-inline py-3" id="region">${data.region}</h3>
-                </dt>
-                <dt>
-                    <h3 class="card-text fs-6 fw-semibold d-inline py-3">Sub Region: </h3>
-                    <h3 class="card-text fs-6 fw-normal d-inline py-3" id="subRegion">${data.subregion}</h3>
-                </dt>
-                <dt>
-                    <h3 class="card-text fs-6 fw-semibold d-inline py-3">Capital: </h3>
-                    <h3 class="card-text fs-6 fw-normal d-inline py-3" id="capital">${data.capital}</h3>
-                </dt>
+                ${setInformation('Native Name', data.nativeName)}
+                ${setInformation('Population', data.population)}
+                ${setInformation('Region', data.region)}
+                ${setInformation('Sub Region', data.subregion)}
+                ${setInformation('Capital', data.capital)}
             </div>
             <div class="my-4 col-12 col-sm-12 col-md-6 col-lg-6">
-                <dt>
-                    <h3 class="card-text fs-6 fw-semibold d-inline py-3">Top Level Domain: </h3>
-                    <h3 class="card-text fs-6 fw-normal d-inline py-3" id="tld">${data.tld}</h3>
-                </dt>
-                <dt>
-                    <h3 class="card-text fs-6 fw-semibold d-inline py-3">Currencies: </h3>
-                    <h3 class="card-text fs-6 fw-normal d-inline py-3" id="currencies">${data.currency}</h3>
-                </dt>
-                <dt>
-                    <h3 class="card-text fs-6 fw-semibold d-inline py-3">Languages: </h3>
-                    <h3 class="card-text fs-6 fw-normal d-inline py-3" id="languages">${data.languages}</h3>
-                </dt>
+                ${setInformation('Top Level Domain', data.tld)}
+                ${setInformation('Currencies', data.currency)}
+                ${setInformation('Languages', data.languages)}
+            </div>
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 d-inline" id="border-countries">
+              <h3 class="card-text fs-6 fw-semibold py-3 d-lg-inline d-sm-block">Border Countries:</h3>
             </div>
         </div>
-
-        <div class="col-12 col-sm-12 col-md-6 col-lg-6 d-inline" id="border-countries">
-            <h3 class="card-text fs-6 fw-semibold py-3 d-lg-inline d-sm-block">Border Countries:</h3>
-        </div>
-
     </div>
   </div>`;
 
@@ -162,3 +138,10 @@ let displayBorderCountries = function (borderCountries, bordersContainer) {
       `<button class="btn border-btn shadow-sm d-inline white mx-2 px-1 my-2 py-1" type="button">${border_country[0].name.common}</button>`;
   });
 };
+
+let setInformation = function (title, data) {
+  return `<dt>
+  <h3 class="card-text fs-6 fw-semibold d-inline py-3">${title}: </h3>
+  <h3 class="card-text fs-6 fw-normal d-inline py-3" id="tld">${data}</h3>
+</dt>`;
+}
