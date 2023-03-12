@@ -147,7 +147,7 @@ export let displayDetails = function (data, borders) {
 
   let back_button = document.getElementById('back-btn');
   back_button.addEventListener('click', (event) => {
-    window.location.replace('http://127.0.0.1:5500/home.html');
+    window.location.replace('https://seba-salahat5.github.io/Countries-Website/home');
   });
 
   if (borders) {
