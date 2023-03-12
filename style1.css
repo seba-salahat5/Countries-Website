@@ -1,0 +1,149 @@
+:root {
+    --body_bg_color: #fafafa;
+    --element_bg_color: white;
+    --font_color: #111517;
+    --close_icon_bg: lightgray;
+    --star_icon_bg: orange;
+    --favourates_area_borderColor: transparent;
+}
+
+body {
+    font-family: 'Nunito Sans', sans-serif;
+    box-sizing: border-box;
+    background-color: var(--body_bg_color);
+}
+
+.white {
+    background-color: var(--element_bg_color);
+    color: var(--font_color);
+}
+
+.adaptive-font {
+    color: var(--font_color);
+}
+
+.darkmode {
+    --body_bg_color:#202c37;
+    --element_bg_color: #2b3945;
+    --font_color: white;
+}
+
+.btn {
+    --bs-btn-font-weight: 600;
+}
+
+.border-btn {
+    font-size: "0.7rem";
+    width : "7vw";
+    height : "5vh";
+}
+
+header h1 {
+    padding-top: 0.45rem;
+    padding-bottom: 0.25rem;
+}
+
+.btn-group-sm>.btn {
+    --bs-btn-padding-x: 1.7rem;
+    --bs-btn-padding-y: 0.4rem;
+}
+
+.dropdown-menu {
+    --bs-dropdown-min-width: 10rem;
+}
+
+.container-fluid {
+    padding-left: 0rem;
+    padding-right: 0rem;
+    margin-left: 0rem;
+    margin-right: 0rem;
+}
+
+.g-5,
+.gy-5 {
+    --bs-gutter-y: 3.5rem;
+}
+
+.g-5,
+.gx-5 {
+    --bs-gutter-x: 3.5rem;
+}
+
+.g-4,
+.gy-4 {
+    --bs-gutter-y: 0rem;
+}
+
+.g-4,
+.gx-4 {
+    --bs-gutter-x: 3.5rem;
+}
+
+.px-5 {
+    padding-right: 4rem !important;
+    padding-left: 4rem !important;
+}
+
+.py-3 {
+    padding-top: 1rem !important;
+    padding-bottom: 0rem !important;
+}
+
+.input-group {
+    width: 32vw;
+}
+
+#searchField {
+    height: 2.5rem;
+}
+
+.dropdown-toggle {
+    width: 10rem;
+    height: 2.5rem;
+}
+
+
+.card-img-top {
+    height: 20vh;
+    object-fit: cover;
+}
+
+.row>* {
+    padding-right: 0rem;
+    padding-left: 2.5rem;
+
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+h5 {
+    font-size: 1.0rem;
+}
+
+h6 {
+    font-size: 0.75rem;
+}
+
+.favourates-bar {
+    border: 2px solid ;
+    border-color: var(--favourates_area_borderColor);
+    width: 20vw;
+}
+.ondragOver {
+    --favourates_area_borderColor:#27ae60;
+}
+.favorite-card-img {
+    height: 4vh;
+    width: 4vw;
+    object-fit: cover;
+}
+
+#close {
+    color: var(--close_icon_bg);
+}
+
+.fa-star {
+    color: var(--star_icon_bg);
+}
