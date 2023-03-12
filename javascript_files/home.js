@@ -52,6 +52,7 @@ let addToFavourates = function (country) {
 let removeFromFavourates = function (country) {
     favourateCountries = removeFromList(favourateCountries, country);
     updateFavourates();
+    updateCountries();
 };
 
 let updateFavourates = function () {
