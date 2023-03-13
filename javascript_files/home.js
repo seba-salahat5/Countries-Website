@@ -36,7 +36,7 @@ async function homePageController() {
 
 let updateCountries = function () {
     filteredCountries = onFilterChange(countries, favourateCountries, selectedRegion);
-    renderCountries(filteredCountries,favourateCountries, onStarClicked);
+    renderCountries(filteredCountries, favourateCountries, onStarClicked);
 };
 
 let onStarClicked = function (country) {

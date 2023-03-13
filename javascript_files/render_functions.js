@@ -46,7 +46,7 @@ export let renderCountries = function (countries, favourates, onStarClicked) {
       onCountyClicked(country.cca2);
     });
 
-    if(favourates.find(favCountry => favCountry.cca2 == country.cca2)){
+    if (favourates.find(favCountry => favCountry.cca2 == country.cca2)) {
       countryCard.querySelector('i').setAttribute('class', 'fa-regular fa-star fa-solid');
     }
 

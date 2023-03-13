@@ -4,13 +4,13 @@ const darkModeButton = document.getElementById('darkMode_btn');
 const body = document.body;
 let darkMode = getFromLocalStorage('darkMode');
 
-export let initializeDarkMode = function(){
+export let initializeDarkMode = function () {
     applyMode();
-    darkModeButton.addEventListener('click',(event)=>{
-      switchMode();
+    darkModeButton.addEventListener('click', (event) => {
+        switchMode();
     });
 };
-export let switchMode = function() {
+export let switchMode = function () {
     darkMode = !darkMode;
     setInLocalStorage('darkMode', darkMode);
     applyMode();
@@ -19,7 +19,7 @@ export let switchMode = function() {
 let applyMode = function () {
     body.setAttribute('class', '');
     darkModeButton.innerHTML = "Dark Mode";
-    if(darkMode){
+    if (darkMode) {
         body.setAttribute('class', 'darkmode');
         darkModeButton.innerHTML = "Light Mode";
     }
