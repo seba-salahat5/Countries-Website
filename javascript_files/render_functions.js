@@ -4,7 +4,7 @@ const favouratesContainer = document.getElementById('favourates_area');
 
 const main = document.getElementById('main');
 
-export let renderCountries = function (countries, onStarClicked) {
+export let renderCountries = function (countries, favourates, onStarClicked) {
   countriesContainer.innerHTML = '';
   if (countries.length == 0) {
     countriesContainer.innerHTML = '<h5 class="card-title text-start fw-bold adaptive-font">No results Found</h5>';
@@ -45,6 +45,11 @@ export let renderCountries = function (countries, onStarClicked) {
     countryCard.querySelector(`#card-${country.cca2}`).addEventListener('click', (event) => {
       onCountyClicked(country.cca2);
     });
+
+    if(favourates.find(favCountry => favCountry.cca2 == country.cca2)){
+      countryCard.querySelector('i').setAttribute('class', 'fa-regular fa-star fa-solid');
+    }
+
     countriesContainer.appendChild(countryCard);
   };
 };
@@ -69,7 +74,6 @@ export let renderFavouratesList = function (favourates, onRemoveClicked) {
   if (favourates) {
     for (let favourateItem of favourates) {
       favouratesContainer.querySelector('div').appendChild(renderFavourateCountry(favourateItem, onRemoveClicked));
-      document.getElementById(`col-${favourateItem.cca2}`).querySelector('i').setAttribute('class', "fa-regular fa-star fa-solid");
     };
   };
 };

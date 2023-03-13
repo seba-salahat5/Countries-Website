@@ -36,7 +36,7 @@ async function homePageController() {
 
 let updateCountries = function () {
     filteredCountries = onFilterChange(countries, favourateCountries, selectedRegion);
-    renderCountries(filteredCountries, onStarClicked);
+    renderCountries(filteredCountries,favourateCountries, onStarClicked);
 };
 
 let onStarClicked = function (country) {
@@ -45,17 +45,17 @@ let onStarClicked = function (country) {
 };
 
 let addToFavourates = function (country) {
-    favourateCountries = addToList(favourateCountries, country)
+    favourateCountries = addToList(favourateCountries, country);
     updateFavourates();
 };
 
 let removeFromFavourates = function (country) {
     favourateCountries = removeFromList(favourateCountries, country);
-    updateCountries();
     updateFavourates();
 };
 
 let updateFavourates = function () {
+    updateCountries();
     setInLocalStorage('favourates', favourateCountries);
     renderFavouratesList(favourateCountries, removeFromFavourates);
 };
