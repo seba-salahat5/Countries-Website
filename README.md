@@ -9,3 +9,5 @@ Main Guidelines:
 - use Drag & Drop API
 - implement different functionalities (debounced searching, filtering, add/remove from favorites)
 - use local storage to persist the data like theme and favorite list
+
+Demo: https://seba-salahat5.github.io/Countries-Website/home
